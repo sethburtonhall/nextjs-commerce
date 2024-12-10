@@ -1,4 +1,5 @@
-export default {
+const config = {
+  transpilePackages: ["jotai", "jotai-devtools"],
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -10,3 +11,5 @@ export default {
     ]
   }
 };
+
+export default config;
