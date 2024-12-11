@@ -16,7 +16,10 @@ export default {
   		fontFamily: {
   			sans: [
   				'var(--font-geist-sans)'
-  			]
+  			],
+  			brand: ['Roboto', 'sans-serif'],
+  			brand2: ['Barlow', 'sans-serif'],
+  			brand3: ['Cabin', 'sans-serif']
   		},
   		keyframes: {
   			fadeIn: {

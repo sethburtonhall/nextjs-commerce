@@ -21,7 +21,7 @@ export async function Footer() {
       <div className="mx-auto flex items-center justify-between w-full max-w-7xl flex-col gap-6 px-6 py-12 text-sm md:flex-row md:gap-12 md:px-4 min-[1320px]:px-0">
         <Link className="flex items-center gap-2 text-black md:pt-1 dark:text-white" href="/">
           <LogoSquare size="sm" />
-          <span className="uppercase">{SITE_NAME}</span>
+          <span className="logotype">{SITE_NAME}</span>
         </Link>
         <Suspense
           fallback={

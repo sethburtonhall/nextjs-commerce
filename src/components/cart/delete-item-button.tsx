@@ -31,9 +31,9 @@ export function DeleteItemButton({
       <Button
         type="submit"
         aria-label="Remove cart item"
-        className="flex size-8 items-center justify-center rounded-full bg-gray-500 hover:bg-gray-600"
+        className="flex size-6 p-2 items-center justify-center rounded-full bg-foreground hover:bg-foreground/90"
       >
-        <X className="text-white dark:text-black" />
+        <X className="text-background"/>
       </Button>
       <p aria-live="polite" className="sr-only" role="status">
         {message}

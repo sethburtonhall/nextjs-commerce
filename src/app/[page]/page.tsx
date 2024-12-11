@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { getPage } from '@/lib/shopify';
+
 import { DefaultTemplate, LandingTemplate } from '@/components/templates';
 
 import { type Page } from '@/types/shopify-types';
@@ -26,19 +27,17 @@ export async function generateMetadata(props: {
 }
 
 // Get page template from metafields
-export function getPageTemplate(page: Page): string {
+function getPageTemplate(page: Page): string {
   return page.metafield?.value || 'default';
 }
 
 export default async function Page(props: { params: Promise<{ page: string }> }) {
   const params = await props.params;
   const page = await getPage(params.page);
+  const template = getPageTemplate(page);
 
   if (!page) return notFound();
 
-  const template = getPageTemplate(page);
-
-  // Choose template based on metafield value
   switch (template) {
     case 'landing':
       return <LandingTemplate page={page} />;

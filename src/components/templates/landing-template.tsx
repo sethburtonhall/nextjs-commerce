@@ -1,6 +1,7 @@
+import { Prose } from '@/components/prose';
+
 import { type Page } from '@/types/shopify-types';
 
-import { Prose } from '@/components/prose';
 
 export function LandingTemplate({ page }: { page: Page }) {
   return (

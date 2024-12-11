@@ -1,16 +1,31 @@
 import { cn } from '@/lib/utils';
 
-export function LogoIcon(props: React.ComponentProps<'svg'>) {
+interface LogoIconProps extends React.ComponentProps<'svg'> {
+  size?: 'sm' | 'lg' | 'xl' | 'og';
+}
+
+export function LogoIcon({ size = 'lg', ...props }: LogoIconProps) {
+  const sizeClasses = {
+    sm: 'size-4', // 16px
+    lg: 'size-6', // 24px
+    xl: 'size-8', // 32px
+    og: 'w-[64px] h-[58px]' // OpenGraph specific size
+  };
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      aria-label={`${process.env.SITE_NAME} logo`}
-      viewBox="0 0 32 28"
+      aria-label="Matic Digital logo"
+      viewBox="0 0 24 24"
       {...props}
-      className={cn('h-4 w-4 fill-black dark:fill-white', props.className)}
+      className={cn('fill-black dark:fill-white', sizeClasses[size], props.className)}
     >
-      <path d="M21.5758 9.75769L16 0L0 28H11.6255L21.5758 9.75769Z" />
-      <path d="M26.2381 17.9167L20.7382 28H32L26.2381 17.9167Z" />
+      {/* Left Bar */}
+      <path d="M4 4h4v16H4z" />
+      {/* Middle Bar */}
+      <path d="M10 4h4v16h-4z" />
+      {/* Right Bar */}
+      <path d="M16 4h4v16h-4z" />
     </svg>
   );
 }
