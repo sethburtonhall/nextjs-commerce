@@ -5,13 +5,14 @@ import { ReactNode } from 'react';
 import { cookies } from 'next/headers';
 
 import { GeistSans } from 'geist/font/sans';
-import { Toaster } from 'sonner';
 
 import { ensureStartsWith } from '@/lib/utils';
 
 import { getCart } from '@/lib/shopify';
 
 import { Providers } from '@/providers/providers';
+
+import { Toaster } from "@/components/ui/sonner"
 
 import { Navbar } from '@/components/layout/navbar';
 import { WelcomeToast } from '@/components/welcome-toast';
@@ -54,7 +55,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <Navbar />
           <main>
             {children}
-            <Toaster closeButton />
+            <Toaster />
             <WelcomeToast />
           </main>
         </Providers>

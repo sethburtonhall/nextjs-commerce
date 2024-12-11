@@ -89,6 +89,9 @@ button {
 }
 
 @layer utilities {
+  .stack {
+    @apply flex flex-col gap-2;
+  }
   .logotype {
     @apply text-lg font-medium font-brand uppercase;
   }
