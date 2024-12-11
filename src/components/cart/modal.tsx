@@ -13,10 +13,12 @@ import { DEFAULT_OPTION } from '@/lib/constants';
 
 import { useCart } from '@/hooks/useCart';
 
-import { Dialog, DialogContent} from '@/components/ui/dialog';
+import {
+  Sheet,
+  SheetContent,
+} from "@/components/ui/sheet"
 
 import { createCartAndSetCookie, redirectToCheckout } from '@/components/cart/actions';
-import { CloseCart } from '@/components/cart/close-cart';
 import { DeleteItemButton } from '@/components/cart/delete-item-button';
 import { EditItemQuantityButton } from '@/components/cart/edit-item-quantity-button';
 import { OpenCart } from '@/components/cart/open-cart';
@@ -60,29 +62,17 @@ export function CartModal() {
       <button aria-label="Open cart" onClick={openCart}>
         <OpenCart quantity={cart?.totalQuantity} />
       </button>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent>
-          {/* <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>
-              This action cannot be undone. This will permanently delete your account
-              and remove your data from our servers.
-            </DialogDescription>
-          </DialogHeader> */}
-          <div className="flex items-center justify-between">
-            <p className="text-lg font-semibold">My Cart</p>
-            <button aria-label="Close cart" onClick={closeCart}>
-              <CloseCart />
-            </button>
-          </div>
 
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetContent>
+          <p className="text-lg font-semibold">My Cart</p>
           {!cart || cart.lines.length === 0 ? (
             <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
               <ShoppingCartIcon className="h-16" />
               <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
             </div>
           ) : (
-            <div className="flex h-full flex-col justify-between overflow-hidden p-1">
+            <div className="flex h-full flex-col justify-between overflow-hidden pb-6">
               <ul className="flex-grow overflow-auto py-4">
                 {cart.lines
                   .sort((a, b) =>
@@ -197,9 +187,9 @@ export function CartModal() {
                 <CheckoutButton />
               </form>
             </div>
-          )}  
-        </DialogContent>
-      </Dialog>
+          )}
+        </SheetContent>
+      </Sheet>
     </>
       );
     }

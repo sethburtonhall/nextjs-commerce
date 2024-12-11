@@ -2,6 +2,7 @@ import containerQueries from '@tailwindcss/container-queries';
 import typography from "@tailwindcss/typography";
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
 export default {
     darkMode: ['class'],
@@ -105,6 +106,7 @@ export default {
   },
   plugins: [
     typography,
+	tailwindcssAnimate,
     containerQueries,
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
@@ -120,6 +122,5 @@ export default {
         }
       );
     }),
-      require("tailwindcss-animate")
 ]
 } satisfies Config;
