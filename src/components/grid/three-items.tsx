@@ -48,7 +48,7 @@ export async function ThreeItemGrid() {
   // Collections that start with `hidden-*` are hidden from the search page.
   const homepageItems = await getProducts(
     {
-      query: 'collection:frontpage',
+      query: 'collection:all',
       sortKey: 'CREATED_AT',
       reverse: true
     },

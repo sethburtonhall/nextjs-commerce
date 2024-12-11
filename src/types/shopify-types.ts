@@ -63,6 +63,10 @@ export type Page = {
   handle: string;
   body: string;
   bodySummary: string;
+  metafield: {
+    value: string;
+    key: string;
+  } | null;
   seo?: SEO;
   createdAt: string;
   updatedAt: string;

@@ -1,15 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
 import { useAtom } from "jotai";
+
 import { themeAtom } from "@/stores/themeStore";
 
 export function ThemeProvider({ 
-  children,
-  defaultTheme = "system",
+  children 
 }: { 
   children: React.ReactNode;
-  defaultTheme?: "dark" | "light" | "system";
 }) {
   const [theme] = useAtom(themeAtom);
   const [mounted, setMounted] = useState(false);

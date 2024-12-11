@@ -8,6 +8,10 @@ const pageFragment = /* GraphQL */ `
       handle
       body
       bodySummary
+      metafield(namespace: "custom", key: "template") {
+        value
+        key
+      }
       seo {
         ...seo
       }
