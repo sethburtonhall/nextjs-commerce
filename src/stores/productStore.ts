@@ -33,7 +33,7 @@ function productReducer(state: ProductState, action: ProductAction): ProductStat
 
 // Product atom with reducer for optimistic updates
 export const productAtom = atomWithReducer<ProductState, ProductAction>({}, productReducer);
-productAtom.debugLabel = "Product Atom";
+productAtom.debugLabel = "Product";
 
 // Action dispatchers
 export const updateOptionAtom = atom(

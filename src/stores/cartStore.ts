@@ -145,7 +145,7 @@ function cartReducer(state: Cart | undefined, action: CartAction): Cart | undefi
 
 // Cart atom with reducer for optimistic updates
 export const cartAtom = atomWithReducer<Cart | undefined, CartAction>(undefined, cartReducer);
-cartAtom.debugLabel = "Cart Atom";
+cartAtom.debugLabel = "Cart";
 
 // Action dispatchers
 export const updateCartItemAtom = atom(

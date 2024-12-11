@@ -3,6 +3,6 @@ import { atomWithStorage } from "jotai/utils";
 
 export type Theme = "dark" | "light" | "system";
 
-// Theme atom
-export const themeAtom = atomWithStorage<Theme>("app-theme", "dark");
-themeAtom.debugLabel = "app-theme";
+// Theme atom with system as default to match most user expectations
+export const themeAtom = atomWithStorage<Theme>("app-theme", "system");
+themeAtom.debugLabel = "Theme";

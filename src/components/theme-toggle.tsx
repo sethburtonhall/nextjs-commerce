@@ -1,17 +1,18 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { useTheme } from "@/providers/theme-provider";
 
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
 
 import { Moon, Sun, LaptopMinimalCheck } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();

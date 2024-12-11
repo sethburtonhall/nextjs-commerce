@@ -1,11 +1,23 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useAtom } from "jotai";
 import { themeAtom } from "@/stores/themeStore";
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({ 
+  children,
+  defaultTheme = "system",
+}: { 
+  children: React.ReactNode;
+  defaultTheme?: "dark" | "light" | "system";
+}) {
   const [theme] = useAtom(themeAtom);
+  const [mounted, setMounted] = useState(false);
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -22,6 +34,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     root.classList.add(theme);
   }, [theme]);
+
+  // Prevent hydration mismatch by not rendering anything until mounted
+  if (!mounted) {
+    return null;
+  }
 
   return children;
 }
