@@ -122,7 +122,7 @@ const config = [{
                         position: "after"
                     },
                     {
-                        pattern: "@heroicons/**",
+                        pattern: "lucide-react",
                         group: "internal",
                         position: "after"
                     },

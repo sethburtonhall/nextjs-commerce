@@ -14,7 +14,7 @@ import Search, { SearchSkeleton } from '@/components/layout/navbar/search';
 
 import type { Menu } from '@/types/shopify-types';
 
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import { Menu as MenuIcon } from 'lucide-react';
 
 export function MobileMenu({ menu }: { menu: Menu[] }) {
   const pathname = usePathname();
@@ -44,7 +44,7 @@ export function MobileMenu({ menu }: { menu: Menu[] }) {
         aria-label="Open mobile menu"
         className="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden dark:border-neutral-700 dark:text-white"
       >
-        <Bars3Icon className="h-4" />
+        <MenuIcon className="h-4" />
       </button>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetContent side="left" className="w-full">

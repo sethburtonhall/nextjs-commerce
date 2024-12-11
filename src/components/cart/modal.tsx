@@ -25,7 +25,7 @@ import { OpenCart } from '@/components/cart/open-cart';
 import { LoadingDots } from '@/components/loading-dots';
 import { Price } from '@/components/price';
 
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { ShoppingCart } from 'lucide-react';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
@@ -68,7 +68,7 @@ export function CartModal() {
           <p className="text-lg font-semibold">My Cart</p>
           {!cart || cart.lines.length === 0 ? (
             <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-              <ShoppingCartIcon className="h-16" />
+              <ShoppingCart className="h-16" />
               <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
             </div>
           ) : (

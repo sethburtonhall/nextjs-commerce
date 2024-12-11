@@ -7,7 +7,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import type { ListItem } from '@/components/layout/search/filter';
 import { FilterItem } from '@/components/layout/search/filter/item';
 
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { ChevronDown } from 'lucide-react';
 
 export function FilterItemDropdown({ list }: { list: ListItem[] }) {
   const pathname = usePathname();
@@ -47,7 +47,7 @@ export function FilterItemDropdown({ list }: { list: ListItem[] }) {
         className="flex w-full items-center justify-between rounded border border-black/30 px-4 py-2 text-sm dark:border-white/30"
       >
         <div>{active}</div>
-        <ChevronDownIcon className="h-4" />
+        <ChevronDown className="h-4" />
       </div>
       {openSelect && (
         <div

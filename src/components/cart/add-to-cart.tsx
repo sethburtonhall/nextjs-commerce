@@ -12,7 +12,7 @@ import { addItem } from '@/components/cart/actions';
 
 import type { Product, ProductVariant } from '@/types/shopify-types';
 
-import { PlusIcon } from '@heroicons/react/24/outline';
+import { Plus } from 'lucide-react';
 
 function SubmitButton({
   availableForSale,
@@ -42,7 +42,7 @@ function SubmitButton({
         className={cn(buttonClasses, disabledClasses)}
       >
         <div className="absolute left-0 ml-4">
-          <PlusIcon className="h-5" />
+          <Plus className="h-5" />
         </div>
         Add To Cart
       </button>
@@ -57,7 +57,7 @@ function SubmitButton({
       })}
     >
       <div className="absolute left-0 ml-4">
-        <PlusIcon className="h-5" />
+        <Plus className="h-5" />
       </div>
       Add To Cart
     </button>
