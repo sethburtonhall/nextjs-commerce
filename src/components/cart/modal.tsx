@@ -13,6 +13,7 @@ import { DEFAULT_OPTION } from '@/lib/constants';
 
 import { useCart } from '@/hooks/useCart';
 
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
@@ -59,9 +60,9 @@ export function CartModal() {
 
   return (
     <>
-      <button aria-label="Open cart" onClick={openCart}>
+      <Button aria-label="Open cart" onClick={openCart} variant="outline" size="icon" className='relative'>
         <OpenCart quantity={cart?.totalQuantity} />
-      </button>
+      </Button>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetContent>
@@ -198,12 +199,12 @@ function CheckoutButton() {
   const { pending } = useFormStatus();
 
   return (
-    <button
-      className="block w-full rounded-full bg-blue-600 p-3 text-center text-sm font-medium text-white opacity-90 hover:opacity-100"
+    <Button
       type="submit"
       disabled={pending}
+      className="block w-full"
     >
       {pending ? <LoadingDots className="bg-white" /> : 'Proceed to Checkout'}
-    </button>
+    </Button>
   );
 }

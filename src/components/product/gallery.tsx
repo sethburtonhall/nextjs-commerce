@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import { useProduct, useUpdateURL } from '@/providers/product-provider';
 
+import { Button } from '@/components/ui/button';
+
 import { GridTileImage } from '@/components/grid/tile';
 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -24,7 +26,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
       <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden">
         {images[imageIndex] && (
           <Image
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover"
             fill
             sizes="(min-width: 1024px) 66vw, 100vw"
             alt={images[imageIndex]?.altText as string}
@@ -36,7 +38,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
         {images.length > 1 ? (
           <div className="absolute bottom-[15%] flex w-full justify-center">
             <div className="mx-auto flex h-11 items-center rounded-full border border-white bg-neutral-50/80 text-neutral-500 backdrop-blur dark:border-black dark:bg-neutral-900/80">
-              <button
+              <Button
                 formAction={() => {
                   const newState = updateImage(previousImageIndex.toString());
                   updateURL(newState);
@@ -45,9 +47,9 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                 className={buttonClassName}
               >
                 <ArrowLeft className="h-5" />
-              </button>
+              </Button>
               <div className="mx-1 h-6 w-px bg-neutral-500"></div>
-              <button
+              <Button
                 formAction={() => {
                   const newState = updateImage(nextImageIndex.toString());
                   updateURL(newState);
@@ -56,7 +58,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                 className={buttonClassName}
               >
                 <ArrowRight className="h-5" />
-              </button>
+              </Button>
             </div>
           </div>
         ) : null}
@@ -69,7 +71,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
 
             return (
               <li key={image.src} className="h-20 w-20">
-                <button
+                <Button
                   formAction={() => {
                     const newState = updateImage(index.toString());
                     updateURL(newState);
@@ -84,7 +86,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                     height={80}
                     active={isActive}
                   />
-                </button>
+                </Button>
               </li>
             );
           })}

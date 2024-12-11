@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
@@ -39,13 +40,14 @@ export function MobileMenu({ menu }: { menu: Menu[] }) {
 
   return (
     <>
-      <button
+      <Button
         onClick={openMobileMenu}
         aria-label="Open mobile menu"
-        className="flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors md:hidden dark:border-neutral-700 dark:text-white"
+        variant="outline"
+        size="icon"
       >
         <MenuIcon className="h-4" />
-      </button>
+      </Button>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetContent side="left" className="w-full">
             <div className="pt-14">

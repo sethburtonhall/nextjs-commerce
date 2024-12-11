@@ -8,6 +8,7 @@ import { CartModal } from '@/components/cart/modal';
 import { MobileMenu } from '@/components/layout/navbar/mobile-menu';
 import Search, { SearchSkeleton } from '@/components/layout/navbar/search';
 import { LogoSquare } from '@/components/logo-square';
+import { ThemeToggle } from "@/components/theme-toggle";
 
 import type { Menu } from '@/types/shopify-types';
 
@@ -56,7 +57,8 @@ export async function Navbar() {
             <Search />
           </Suspense>
         </div>
-        <div className="flex justify-end md:w-1/3">
+        <div className="flex justify-end gap-4 md:w-1/3">
+          <ThemeToggle />
           <CartModal />
         </div>
       </div>

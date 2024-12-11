@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils';
 
 import { useProduct, useUpdateURL } from '@/providers/product-provider';
 
+import { Button } from '@/components/ui/button';
+
 import type { ProductOption, ProductVariant } from '@/types/shopify-types';
 
 type Combination = {
@@ -64,7 +66,8 @@ export function VariantSelector({
             const isActive = state[optionNameLowerCase] === value;
 
             return (
-              <button
+              //TODO: check these classes in relation to the shadcn button
+              <Button
                 formAction={() => {
                   const newState = updateOption(optionNameLowerCase, value);
                   updateURL(newState);
@@ -85,7 +88,7 @@ export function VariantSelector({
                 )}
               >
                 {value}
-              </button>
+              </Button>
             );
           })}
         </dd>

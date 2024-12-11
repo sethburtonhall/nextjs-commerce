@@ -2,11 +2,11 @@
 
 import { useActionState } from 'react';
 
-import { cn } from '@/lib/utils';
-
 import { useCart } from '@/hooks/useCart';
 
 import { useProduct } from '@/providers/product-provider';
+
+import { Button } from '@/components/ui/button';
 
 import { addItem } from '@/components/cart/actions';
 
@@ -21,46 +21,37 @@ function SubmitButton({
   availableForSale: boolean;
   selectedVariantId: string | undefined;
 }) {
-  const buttonClasses =
-    'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
-  const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
     return (
-      <button disabled className={cn(buttonClasses, disabledClasses)}>
+      <Button disabled>
         Out Of Stock
-      </button>
+      </Button>
     );
   }
 
   console.log(selectedVariantId);
   if (!selectedVariantId) {
     return (
-      <button
+      <Button
         aria-label="Please select an option"
         disabled
-        className={cn(buttonClasses, disabledClasses)}
+        className='relative w-full'
       >
-        <div className="absolute left-0 ml-4">
-          <Plus className="h-5" />
-        </div>
+        <Plus className="h-5" />
         Add To Cart
-      </button>
+      </Button>
     );
   }
 
   return (
-    <button
+    <Button
+    className='relative w-full'
       aria-label="Add to cart"
-      className={cn(buttonClasses, {
-        'hover:opacity-90': true
-      })}
     >
-      <div className="absolute left-0 ml-4">
-        <Plus className="h-5" />
-      </div>
+      <Plus className="h-5" />
       Add To Cart
-    </button>
+    </Button>
   );
 }
 
