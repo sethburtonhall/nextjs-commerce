@@ -93,6 +93,6 @@ button {
     @apply flex flex-col gap-2;
   }
   .logotype {
-    @apply text-lg font-medium font-brand uppercase;
+    @apply font-brand text-lg font-medium uppercase;
   }
 }

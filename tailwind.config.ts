@@ -109,17 +109,7 @@ export default {
     typography,
     tailwindcssAnimate,
     containerQueries,
-    plugin(({ addUtilities, matchUtilities, theme }) => {
-      const utilities = {
-        // light, dark color scheme
-        '.light': {
-          'color-scheme': 'light'
-        },
-        '.dark': {
-          'color-scheme': 'dark'
-        }
-      };
-      addUtilities(utilities);
+    plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
           'animation-delay': (value) => {
