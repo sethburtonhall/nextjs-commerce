@@ -3,9 +3,9 @@ import { notFound } from 'next/navigation';
 
 import { getPage } from '@/lib/shopify';
 
-import { DefaultTemplate, LandingTemplate } from '@/templates';
-
 import { type Page } from '@/types/shopify-types';
+
+import { DefaultTemplate, LandingTemplate } from '@/templates';
 
 export async function generateMetadata(props: {
   params: Promise<{ page: string }>;

@@ -15,7 +15,7 @@ export function LandingTemplate({ page }: { page: Page }) {
     setTheme('light');
     // Optionally reset theme on unmount
     return () => setTheme('system');
-  }, []);
+  }, [setTheme]);
 
   return (
     <div className="mx-auto max-w-screen-2xl">
