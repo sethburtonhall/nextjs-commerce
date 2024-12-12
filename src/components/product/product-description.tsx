@@ -1,5 +1,6 @@
-import { AddToCart } from '@/components/cart/add-to-cart';
 import { Badge } from '@/components/ui/badge';
+
+import { AddToCart } from '@/components/cart/add-to-cart';
 import { Price } from '@/components/price';
 import { VariantSelector } from '@/components/product/variant-selector';
 import { Prose } from '@/components/prose';

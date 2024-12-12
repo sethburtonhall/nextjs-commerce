@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 
-import { ThemeProvider } from 'next-themes'
-
 import { Provider as JotaiProvider } from "jotai";
 import { DevTools } from 'jotai-devtools';
+import { ThemeProvider } from 'next-themes'
 import 'jotai-devtools/styles.css';
 
 import { CartProvider } from '@/providers/cart-provider';

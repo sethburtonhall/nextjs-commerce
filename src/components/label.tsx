@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 
 import { Badge } from '@/components/ui/badge';
+
 import { Price } from '@/components/price';
 
 export const Label = ({
