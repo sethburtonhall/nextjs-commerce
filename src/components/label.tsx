@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
 
+import { Badge } from '@/components/ui/badge';
 import { Price } from '@/components/price';
 
 export const Label = ({
@@ -21,12 +22,13 @@ export const Label = ({
     >
       <div className="flex items-center rounded-full border bg-white/70 p-1 text-xs font-semibold text-black backdrop-blur-md dark:border-neutral-800 dark:bg-black/70 dark:text-white">
         <h3 className="mr-4 line-clamp-2 flex-grow pl-2 leading-none tracking-tight">{title}</h3>
+        <Badge size="lg" className='bg-blue-700'>
         <Price
-          className="flex-none rounded-full bg-blue-600 p-2 text-white"
           amount={amount}
           currencyCode={currencyCode}
           currencyCodeClassName="hidden @[275px]/label:inline"
         />
+        </Badge>
       </div>
     </div>
   );

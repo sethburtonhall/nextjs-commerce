@@ -1,4 +1,5 @@
 import { AddToCart } from '@/components/cart/add-to-cart';
+import { Badge } from '@/components/ui/badge';
 import { Price } from '@/components/price';
 import { VariantSelector } from '@/components/product/variant-selector';
 import { Prose } from '@/components/prose';
@@ -10,12 +11,12 @@ export function ProductDescription({ product }: { product: Product }) {
     <>
       <div className="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
         <h1 className="mb-2 text-5xl font-medium">{product.title}</h1>
-        <div className="mr-auto w-auto rounded-full bg-blue-600 p-2 text-sm text-white">
+        <Badge className="mr-auto bg-blue-700" size="lg">
           <Price
             amount={product.priceRange.maxVariantPrice.amount}
             currencyCode={product.priceRange.maxVariantPrice.currencyCode}
           />
-        </div>
+        </Badge>
       </div>
       <VariantSelector options={product.options} variants={product.variants} />
       {product.descriptionHtml ? (

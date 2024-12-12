@@ -36,6 +36,7 @@ export async function Navbar() {
               {SITE_NAME}
             </div>
           </Link>
+          {/* TODO: Consider implementing shadcn navigation menu to support submenus */}
           {menu.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
               {menu.map((item: Menu) => (

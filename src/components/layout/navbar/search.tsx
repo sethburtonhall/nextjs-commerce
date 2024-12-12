@@ -10,6 +10,7 @@ export default function Search() {
 
   return (
     <Form action="/search" className="w-max-[550px] relative w-full lg:w-80 xl:w-full">
+      {/* TODO: consider implementing shadcn input and command https://ui.shadcn.com/docs/components/command */}
       <input
         key={searchParams?.get('q')}
         type="text"

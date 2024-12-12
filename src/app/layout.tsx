@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const cart = cartId ? await getCart(cartId) : undefined;
 
   return (
-    <html lang="en" className={GeistSans.variable}>
+    <html lang="en" className={GeistSans.variable} suppressHydrationWarning>
       <body className="bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
         <Providers cart={cart}>
           <Navbar />

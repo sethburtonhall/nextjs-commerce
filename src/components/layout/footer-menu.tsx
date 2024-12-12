@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 
 import type { Menu } from '@/types/shopify-types';
 
+// TODO: Consider implementing shadcn navigation menu for consistency
 function FooterMenuItem({ item }: { item: Menu }) {
   const pathname = usePathname();
   const [active, setActive] = useState(pathname === item.path);
