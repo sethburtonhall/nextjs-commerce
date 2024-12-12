@@ -18,12 +18,10 @@ function SubmitButton({ type }: { type: 'plus' | 'minus' }) {
       type="submit"
       aria-label={type === 'plus' ? 'Increase item quantity' : 'Reduce item quantity'}
       variant="ghost"
-      className={cn(
-        {
-          'rounded-tr-full rounded-br-full': type === 'plus',
-          'rounded-tl-full rounded-bl-full': type === 'minus'
-        },
-      )}
+      className={cn({
+        'rounded-tr-full rounded-br-full': type === 'plus',
+        'rounded-tl-full rounded-bl-full': type === 'minus'
+      })}
     >
       {type === 'plus' ? (
         <Plus className="h-4 w-4 dark:text-neutral-500" />

@@ -13,9 +13,7 @@ export function LogoSquare({ size }: { size?: 'sm' | undefined }) {
         }
       )}
     >
-      <LogoIcon
-        size={size}
-      />
+      <LogoIcon size={size} />
     </div>
   );
 }

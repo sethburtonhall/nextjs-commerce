@@ -2,7 +2,6 @@ import { Prose } from '@/components/prose';
 
 import { type Page } from '@/types/shopify-types';
 
-
 export function LandingTemplate({ page }: { page: Page }) {
   return (
     <div className="mx-auto max-w-screen-2xl">

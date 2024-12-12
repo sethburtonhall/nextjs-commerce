@@ -6,10 +6,7 @@ import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent } from '@/components/ui/sheet';
 
 import Search, { SearchSkeleton } from '@/components/layout/navbar/search';
 
@@ -40,39 +37,34 @@ export function MobileMenu({ menu }: { menu: Menu[] }) {
 
   return (
     <>
-      <Button
-        onClick={openMobileMenu}
-        aria-label="Open mobile menu"
-        variant="outline"
-        size="icon"
-      >
+      <Button onClick={openMobileMenu} aria-label="Open mobile menu" variant="outline" size="icon">
         <MenuIcon className="h-4" />
       </Button>
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetContent side="left" className="w-full">
-            <div className="pt-14">
-                <div className="mb-4 w-full">
-                  <Suspense fallback={<SearchSkeleton />}>
-                    <Search />
-                  </Suspense>
-                </div>
-                {menu.length ? (
-                  <ul className="flex w-full flex-col">
-                    {menu.map((item: Menu) => (
-                      <li
-                        className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
-                        key={item.title}
-                      >
-                        <Link href={item.path} prefetch={true} onClick={closeMobileMenu}>
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
-          </SheetContent>
-        </Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetContent side="left" className="w-full">
+          <div className="pt-14">
+            <div className="mb-4 w-full">
+              <Suspense fallback={<SearchSkeleton />}>
+                <Search />
+              </Suspense>
+            </div>
+            {menu.length ? (
+              <ul className="flex w-full flex-col">
+                {menu.map((item: Menu) => (
+                  <li
+                    className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
+                    key={item.title}
+                  >
+                    <Link href={item.path} prefetch={true} onClick={closeMobileMenu}>
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        </SheetContent>
+      </Sheet>
     </>
   );
 }

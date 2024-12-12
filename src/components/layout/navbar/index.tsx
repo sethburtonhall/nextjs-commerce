@@ -8,7 +8,7 @@ import { CartModal } from '@/components/cart/modal';
 import { MobileMenu } from '@/components/layout/navbar/mobile-menu';
 import Search, { SearchSkeleton } from '@/components/layout/navbar/search';
 import { LogoSquare } from '@/components/logo-square';
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from '@/components/theme-toggle';
 
 import type { Menu } from '@/types/shopify-types';
 
@@ -32,9 +32,7 @@ export async function Navbar() {
             className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
           >
             <LogoSquare />
-            <div className="ml-2 flex-none logotype md:hidden lg:block">
-              {SITE_NAME}
-            </div>
+            <div className="ml-2 flex-none logotype md:hidden lg:block">{SITE_NAME}</div>
           </Link>
           {/* TODO: Consider implementing shadcn navigation menu to support submenus */}
           {menu.length ? (

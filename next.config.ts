@@ -1,5 +1,5 @@
 const config = {
-  transpilePackages: ["jotai", "jotai-devtools"],
+  transpilePackages: ['jotai', 'jotai-devtools'],
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [

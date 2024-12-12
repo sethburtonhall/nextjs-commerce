@@ -15,9 +15,8 @@ export function useCart() {
 
   return {
     cart,
-    updateCartItem: (merchandiseId: string, updateType: UpdateType) => 
+    updateCartItem: (merchandiseId: string, updateType: UpdateType) =>
       updateCartItem({ merchandiseId, updateType }),
-    addCartItem: (variant: ProductVariant, product: Product) => 
-      addCartItem({ variant, product })
+    addCartItem: (variant: ProductVariant, product: Product) => addCartItem({ variant, product })
   };
 }

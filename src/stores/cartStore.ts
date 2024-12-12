@@ -102,7 +102,7 @@ function cartReducer(state: Cart | undefined, action: CartAction): Cart | undefi
   switch (action.type) {
     case 'SET_CART':
       return action.payload;
-      
+
     case 'UPDATE_ITEM': {
       const { merchandiseId, updateType } = action.payload;
       const updatedLines = currentCart.lines
@@ -145,7 +145,7 @@ function cartReducer(state: Cart | undefined, action: CartAction): Cart | undefi
 
 // Cart atom with reducer for optimistic updates
 export const cartAtom = atomWithReducer<Cart | undefined, CartAction>(undefined, cartReducer);
-cartAtom.debugLabel = "Cart";
+cartAtom.debugLabel = 'Cart';
 
 // Action dispatchers
 export const updateCartItemAtom = atom(
@@ -162,9 +162,6 @@ export const addCartItemAtom = atom(
   }
 );
 
-export const setCartAtom = atom(
-  null,
-  (get, set, cart: Cart | undefined) => {
-    set(cartAtom, { type: 'SET_CART', payload: cart });
-  }
-);
+export const setCartAtom = atom(null, (get, set, cart: Cart | undefined) => {
+  set(cartAtom, { type: 'SET_CART', payload: cart });
+});

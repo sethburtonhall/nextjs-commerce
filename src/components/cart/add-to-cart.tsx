@@ -21,23 +21,14 @@ function SubmitButton({
   availableForSale: boolean;
   selectedVariantId: string | undefined;
 }) {
-
   if (!availableForSale) {
-    return (
-      <Button disabled>
-        Out Of Stock
-      </Button>
-    );
+    return <Button disabled>Out Of Stock</Button>;
   }
 
   console.log(selectedVariantId);
   if (!selectedVariantId) {
     return (
-      <Button
-        aria-label="Please select an option"
-        disabled
-        className='relative w-full'
-      >
+      <Button aria-label="Please select an option" disabled className="relative w-full">
         <Plus className="h-5" />
         Add To Cart
       </Button>
@@ -45,10 +36,7 @@ function SubmitButton({
   }
 
   return (
-    <Button
-    className='relative w-full'
-      aria-label="Add to cart"
-    >
+    <Button className="relative w-full" aria-label="Add to cart">
       <Plus className="h-5" />
       Add To Cart
     </Button>

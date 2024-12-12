@@ -12,8 +12,9 @@ import { getCart } from '@/lib/shopify';
 
 import { Providers } from '@/providers/providers';
 
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from '@/components/ui/sonner';
 
+import { Footer } from '@/components/layout/footer';
 import { Navbar } from '@/components/layout/navbar';
 import { WelcomeToast } from '@/components/welcome-toast';
 
@@ -50,14 +51,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 
   return (
     <html lang="en" className={GeistSans.variable} suppressHydrationWarning>
-      <body className="bg-background text-foreground selection:bg-accent selection:text-accent-foreground">
+      <body className="bg-background text-foreground selection:bg-accent selection:text-accent-foreground min-h-screen flex flex-col">
         <Providers cart={cart}>
           <Navbar />
-          <main>
+          <main className="flex-1">
             {children}
             <Toaster />
             <WelcomeToast />
           </main>
+          <Footer />
         </Providers>
       </body>
     </html>

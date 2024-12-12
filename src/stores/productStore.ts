@@ -7,7 +7,7 @@ export type ProductState = {
   image?: string;
 };
 
-type ProductAction = 
+type ProductAction =
   | { type: 'UPDATE_OPTION'; payload: { name: string; value: string } }
   | { type: 'UPDATE_IMAGE'; payload: { index: string } }
   | { type: 'SET_STATE'; payload: ProductState };
@@ -33,7 +33,7 @@ function productReducer(state: ProductState, action: ProductAction): ProductStat
 
 // Product atom with reducer for optimistic updates
 export const productAtom = atomWithReducer<ProductState, ProductAction>({}, productReducer);
-productAtom.debugLabel = "Product";
+productAtom.debugLabel = 'Product';
 
 // Action dispatchers
 export const updateOptionAtom = atom(
@@ -43,16 +43,10 @@ export const updateOptionAtom = atom(
   }
 );
 
-export const updateImageAtom = atom(
-  null,
-  (get, set, index: string) => {
-    set(productAtom, { type: 'UPDATE_IMAGE', payload: { index } });
-  }
-);
+export const updateImageAtom = atom(null, (get, set, index: string) => {
+  set(productAtom, { type: 'UPDATE_IMAGE', payload: { index } });
+});
 
-export const setProductStateAtom = atom(
-  null,
-  (get, set, state: ProductState) => {
-    set(productAtom, { type: 'SET_STATE', payload: state });
-  }
-);
+export const setProductStateAtom = atom(null, (get, set, state: ProductState) => {
+  set(productAtom, { type: 'SET_STATE', payload: state });
+});

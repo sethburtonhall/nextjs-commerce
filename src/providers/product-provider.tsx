@@ -7,15 +7,18 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useAtom, useSetAtom } from 'jotai';
 import { useHydrateAtoms } from 'jotai/utils';
 
-import { 
-  productAtom, 
-  updateOptionAtom, 
-  updateImageAtom, 
+import {
+  productAtom,
+  updateOptionAtom,
+  updateImageAtom,
   setProductStateAtom,
-  type ProductState 
+  type ProductState
 } from '@/stores/productStore';
 
-function HydrateProduct({ initialState, children }: PropsWithChildren<{ initialState: ProductState }>) {
+function HydrateProduct({
+  initialState,
+  children
+}: PropsWithChildren<{ initialState: ProductState }>) {
   useHydrateAtoms([[productAtom, { type: 'SET_STATE', payload: initialState }]]);
   return children;
 }
@@ -41,9 +44,7 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     setProductState(getInitialState());
   }, [searchParams, setProductState, getInitialState]);
 
-  return (
-    <HydrateProduct initialState={getInitialState()}>{children}</HydrateProduct>
-  );
+  return <HydrateProduct initialState={getInitialState()}>{children}</HydrateProduct>;
 }
 
 export function useProduct() {

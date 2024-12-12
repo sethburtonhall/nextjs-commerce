@@ -2,7 +2,6 @@ import { Prose } from '@/components/prose';
 
 import { type Page } from '@/types/shopify-types';
 
-
 export function DefaultTemplate({ page }: { page: Page }) {
   return (
     <div className="space-y-8">

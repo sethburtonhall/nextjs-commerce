@@ -2,7 +2,6 @@ import { sorting } from '@/lib/constants';
 
 import {ChildrenWrapper} from '@/app/search/children-wrapper';
 
-import { Footer } from '@/components/layout/footer';
 import Collections from '@/components/layout/search/collections';
 import FilterList from '@/components/layout/search/filter';
 
@@ -20,7 +19,6 @@ export default function SearchLayout({ children }: { children: React.ReactNode }
           <FilterList list={sorting} title="Sort by" />
         </div>
       </div>
-      <Footer />
     </>
   );
 }
