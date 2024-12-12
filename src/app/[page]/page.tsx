@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { getPage } from '@/lib/shopify';
 
-import { DefaultTemplate, LandingTemplate } from '@/components/templates';
+import { DefaultTemplate, LandingTemplate } from '@/templates';
 
 import { type Page } from '@/types/shopify-types';
 

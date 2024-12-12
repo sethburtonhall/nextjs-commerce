@@ -1,8 +1,22 @@
+'use client';
+import { useEffect } from 'react';
+
+import { useTheme } from 'next-themes';
+
 import { Prose } from '@/components/prose';
 
 import { type Page } from '@/types/shopify-types';
 
 export function LandingTemplate({ page }: { page: Page }) {
+  const { setTheme } = useTheme();
+
+  // Force light theme when component mounts
+  useEffect(() => {
+    setTheme('light');
+    // Optionally reset theme on unmount
+    return () => setTheme('system');
+  }, []);
+
   return (
     <div className="mx-auto max-w-screen-2xl">
       {/* Hero Section */}
