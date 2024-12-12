@@ -1,5 +1,5 @@
 /** @type {import('prettier').Config} */
-export default {
+const config = {
   semi: true,
   singleQuote: true,
   arrowParens: 'always',
@@ -9,3 +9,5 @@ export default {
   bracketSpacing: true,
   plugins: ['prettier-plugin-tailwindcss']
 };
+
+export default config;
